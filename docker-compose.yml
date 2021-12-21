@@ -1,0 +1,11 @@
+version: "3.3"
+
+services:
+
+  proxy:
+    image: ghcr.io/viasnake/mcserver-proxy
+    environment:
+      - JE_BACKEND_ADDRESS=127.0.0.1
+      - JE_BACKEND_PORT=25565
+      - BE_BACKEND_ADDRESS=127.0.0.1
+      - BE_BACKEND_PORT=19132
