@@ -39,3 +39,7 @@ jobs:
           context: .
           push: true
           tags: ghcr.io/viasnake/mcserver-proxy:latest
+          platform:
+            - linux/386
+            - linux/amd64
+            - linux/arm64
