@@ -1,0 +1,18 @@
+upstream minecraft_tcp {
+    server ${JE_BACKEND_ADDRESS}:${JE_BACKEND_PORT};
+}
+
+server {
+    listen 25565;
+    proxy_pass minecraft_tcp;
+    proxy_protocol on;
+}
+
+upstream minecraft_udp {
+    server ${BE_BACKEND_ADDRESS}:${BE_BACKEND_PORT};
+}
+
+server {
+    listen 19132 udp;
+    proxy_pass minecraft_udp;
+}
